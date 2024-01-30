@@ -1,113 +1,113 @@
-# React homework template
+# React Image Search Application
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+The React Image Search Application is a client-side, single-page application
+built using the React library. The primary objective is to facilitate image
+search functionality by interfacing with the Pixabay API, fetching high-quality
+images based on user-provided keywords.
 
-## Создание репозитория по шаблону
+[![screenshot](https://github.com/Valik3201/goit-react-hw-03-image-finder/blob/main/assets/1.png)](https://github.com/Valik3201/goit-react-hw-03-image-finder/blob/main/assets/1.png)
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+## Features
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+- **Image Search:** Find images by entering keywords in the search bar.
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+- **Pagination:** Explore multiple pages of search results, each page showcasing
+  12 images.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+- **Easy-to-Use Interface:** The application features a user-friendly search bar
+  for effortless keyword input.
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+- **Dynamic Image Gallery:** Enjoy a visually appealing gallery that dynamically
+  displays a variety of images.
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+- **Load More:** Click the "Load More" button to reveal additional images and
+  enhance your browsing experience.
 
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
+- **Loading Spinner:** A loading spinner ensures a smooth experience while
+  images are being loaded.
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+- **Modal Display:** Click on any image in the gallery to view a larger version
+  in a modal window.
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
+## Usage
 
-## Подготовка к работе
+1. **Access the Application:**
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+   - Visit the live application
+     [here](https://valik3201.github.io/goit-react-hw-03-image-finder/).
 
-## Деплой
+2. **Explore Images:**
 
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+   - Enter keywords in the search bar related to the images you're looking for.
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+3. **Navigate Through Results:**
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+   - Browse through multiple pages of images by using the pagination controls.
 
-![GitHub Pages settings](./assets/repo-settings.png)
+4. **View Larger Images:**
 
-### Статус деплоя
+   - Click on any image in the gallery to view a larger version in a modal
+     window.
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
+5. **Load More Images:**
+   - If you want to see more images, simply click the "Load More" button.
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
+[![screenshot](https://github.com/Valik3201/goit-react-hw-03-image-finder/blob/main/assets/2.png)](https://github.com/Valik3201/goit-react-hw-03-image-finder/blob/main/assets/2.png)
 
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
+## Project Structure
 
-![Deployment status](./assets/deploy-status.png)
+The project is organized in a clear and modular structure to enhance readability
+and maintainability. Below is an overview of the main components and their
+responsibilities:
 
-### Живая страница
+- **`src` Folder:** Contains the source code for the React application.
 
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
+  - **`components` Subfolder:** Holds individual React components that
+    contribute to the application's functionality and appearance.
 
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
+    - **`Searchbar` Component:**
 
-### Маршрутизация
+      - Responsible for creating a user-friendly search interface.
+      - Accepts the `onSubmit` prop, a function to handle form submissions.
+      - DOM structure includes a header with a form, search input, and a
+        "Search" button.
 
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
+    - **`ImageGallery` Component:**
 
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
+      - Renders a list of image cards, creating a dynamic gallery.
+      - Utilizes the `<ImageGalleryItem>` component to represent each image
+        within the gallery.
 
-## Как это работает
+    - **`ImageGalleryItem` Component:**
 
-![How it works](./assets/how-it-works.png)
+      - Represents an individual list item with an image.
+      - DOM structure includes a list item (`<li>`) with an image (`<img>`).
 
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+    - **`Button` Component:**
+
+      - Handles the "Load More" functionality.
+      - Renders the button to load additional images.
+      - Only displayed when there are loaded images.
+
+    - **`Loader` Component:**
+
+      - Displays a spinner while images are being loaded.
+      - Utilizes a ready-made component, such as `react-loader-spinner`, to
+        enhance user experience.
+
+    - **`Modal` Component:**
+      - Activated when a gallery item is clicked, displaying a larger version of
+        the image.
+      - Features a dark overlay and allows users to close the modal window.
+
+  - **`App.js` File:**
+
+    - The main application component where other components are assembled.
+    - Manages state, handles API calls, and orchestrates the interaction between
+      components.
+
+  - **`api.js` File:**
+    - Handles interactions with the Pixabay API.
+    - Constructs and sends HTTP requests to fetch images based on user input.
+
+- **`public` Folder:** Contains static assets and the HTML file.
