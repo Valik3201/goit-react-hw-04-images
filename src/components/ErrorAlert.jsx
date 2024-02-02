@@ -8,7 +8,7 @@ import { Container, Row, Col, Alert } from 'react-bootstrap';
  * @param {string} props.errorMessage - The error message to be displayed.
  * @returns {JSX.Element} - The rendered React element.
  */
-function ErrorAlert({ errorMessage }) {
+const ErrorAlert = ({ errorMessage }) => {
   return (
     <Container>
       <Row className="justify-content-center mt-5">
@@ -26,7 +26,7 @@ function ErrorAlert({ errorMessage }) {
       </Row>
     </Container>
   );
-}
+};
 
 /**
  * PropTypes for the ErrorAlert component.
