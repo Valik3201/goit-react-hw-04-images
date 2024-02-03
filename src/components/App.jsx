@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import fetchImages from 'services/api';
 import Searchbar from './Searchbar';
 import ImageGallery from './ImageGallery';
@@ -24,32 +24,7 @@ const App = () => {
   const [totalHits, setTotalHits] = useState(null);
 
   /**
-   * Fetches images from the API based on the search query and current page.
-   * @function
-   * @returns {void}
-   */
-  const getImages = useCallback(async () => {
-    if (!searchQuery) {
-      return;
-    }
-
-    try {
-      setIsLoading(true);
-
-      const { hits, totalHits } = await fetchImages(searchQuery, currentPage);
-
-      setImages(prevImages => [...prevImages, ...hits]);
-      setError(null);
-      setTotalHits(totalHits || 0);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [searchQuery, currentPage]);
-
-  /**
-   * Loads more images by incrementing the current page.
+   * Increment current page to load more images.
    * @function
    * @returns {void}
    */
@@ -58,8 +33,8 @@ const App = () => {
   };
 
   /**
-   * Handles form submission for a new search query.
-   * Resets state and triggers a new image search.
+   * Handle form submission for a new search query.
+   * Reset state and trigger a new image search.
    * @function
    * @param {string} newSearchQuery - The new search query.
    * @returns {void}
@@ -75,8 +50,33 @@ const App = () => {
   };
 
   useEffect(() => {
+    /**
+     * Fetch images from the API based on the search query and current page.
+     * @function
+     * @returns {void}
+     */
+    const getImages = async () => {
+      if (!searchQuery) {
+        return;
+      }
+
+      try {
+        setIsLoading(true);
+
+        const { hits, totalHits } = await fetchImages(searchQuery, currentPage);
+
+        setImages(prevImages => [...prevImages, ...hits]);
+        setError(null);
+        setTotalHits(totalHits || 0);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
     getImages();
-  }, [getImages]);
+  }, [searchQuery, currentPage]);
 
   return (
     <>

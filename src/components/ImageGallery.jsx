@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Col, Row, Image } from 'react-bootstrap';
 import { ImageModal } from './Modal';
